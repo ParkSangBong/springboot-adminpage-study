@@ -14,6 +14,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Entity
 //@ToString(exclude = {"user", "item"})   // 연관관계 설정에 대한 변수에 대해선 exclude 시켜줘야 오버플로우가 발생하지 않음
+@ToString(exclude = {"orderGroup", "item"})
 public class OrderDetail {
 
     @Id
@@ -36,9 +37,13 @@ public class OrderDetail {
 
     private String updatedBy;
 
-    private Long orderGroupId;
+    //OrderDetail : Item = N : 1
+    @ManyToOne
+    private Item item;
 
-    private Long itemId;
+    //OrderDetail : OrderGroup = N : 1
+    @ManyToOne
+    private OrderGroup orderGroup;
 
     // order_detail : user = N : 1, 연관관계 설정할때에는 반드시 객체이름으로.
 //    @ManyToOne
