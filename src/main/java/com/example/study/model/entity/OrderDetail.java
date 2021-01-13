@@ -20,8 +20,6 @@ public class OrderDetail {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private LocalDateTime orderAt;
-
     private String status;
 
     private LocalDateTime arrivalDate;
@@ -37,6 +35,10 @@ public class OrderDetail {
     private LocalDateTime updatedAt;
 
     private String updatedBy;
+
+    private Long orderGroupId;
+
+    private Long itemId;
 
     // order_detail : user = N : 1, 연관관계 설정할때에는 반드시 객체이름으로.
 //    @ManyToOne

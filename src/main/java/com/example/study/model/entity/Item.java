@@ -42,6 +42,8 @@ public class Item {
 
     private String updatedBy;
 
+    private Long partnerId;
+
     //  fetchtype LAZY = 지연로딩 , EAGER = 즉시로딩
     //  LAZY 로딩은 따로 메서드를 호출하지 않는 이상(변수에 대해서 GET 메써드를 호출하지 않는 이상
     //  연관관계가 설정된 테이블에 대해서 SELECT를 하지 않겠다는 것이 LAZY 옵션
