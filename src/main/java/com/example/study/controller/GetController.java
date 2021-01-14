@@ -1,6 +1,7 @@
 package com.example.study.controller;
 
 import com.example.study.model.SearchParam;
+import com.example.study.model.network.Header;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -39,6 +40,14 @@ public class GetController {
         // 즉 검색 파라미터에 대해서 어떻게 처리할것인지에 대해서 공부했다.
         // 주소창에 파라미터가 노출된다. 브라우저에서 주소에 대한 캐시가 이루어지고, 정보를 얻을 때 사용한다.
         return searchParam;
+    }
+
+    @GetMapping("/header")
+    public Header getHeader(){
+
+        //  {"resultCode" : "OK" , "description" : "OK"}
+        return Header.builder().resultCode("OK").description("OK").build();
+
     }
 
 }
